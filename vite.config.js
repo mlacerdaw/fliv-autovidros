@@ -2,7 +2,6 @@
 import path from 'node:path';
 import react from '@vitejs/plugin-react';
 import { createLogger, defineConfig } from 'vite';
-import { componentTagger } from "lovable-tagger";
 
 const configWindowFetchMonkeyPatch = `
 const originalFetch = window.fetch;
@@ -78,8 +77,7 @@ export default defineConfig(({ mode }) => ({
 	plugins: [
 		react(),
 		addTransformIndexHtml,
-		mode === 'development' && componentTagger(),
-	].filter(Boolean),
+	],
 	server: {
 		host: "::",
 		port: 8080,
