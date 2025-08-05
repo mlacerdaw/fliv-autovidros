@@ -28,30 +28,30 @@ function CarIcon(props) {
 }
 
 const services = [
-  { name: 'Troca de para-brisa', icon: <ShieldCheck size={48} className="text-fliv-blue-primary" /> },
-  { name: 'Reparo de trincas', icon: <Wrench size={48} className="text-fliv-blue-primary" /> },
-  { name: 'Vidros laterais', icon: <CarIcon className="text-fliv-blue-primary" /> },
-  { name: 'Vidro traseiro', icon: <CarIcon className="text-fliv-blue-primary" /> },
-  { name: 'Regulagem de vidros elétricos', icon: <Settings size={48} className="text-fliv-blue-primary" /> },
-  { name: 'Outros sob consulta', icon: <CheckCircle size={48} className="text-fliv-blue-primary" /> },
+  { name: 'Troca de para-brisa', icon: <ShieldCheck size={40} className="text-fliv-blue-primary" /> },
+  { name: 'Reparo de trincas', icon: <Wrench size={40} className="text-fliv-blue-primary" /> },
+  { name: 'Vidros laterais', icon: <CarIcon className="text-fliv-blue-primary w-10 h-10" /> },
+  { name: 'Vidro traseiro', icon: <CarIcon className="text-fliv-blue-primary w-10 h-10" /> },
+  { name: 'Regulagem de vidros elétricos', icon: <Settings size={40} className="text-fliv-blue-primary" /> },
+  { name: 'Outros sob consulta', icon: <CheckCircle size={40} className="text-fliv-blue-primary" /> },
 ];
 
 const ServicesSection = () => (
-  <section id="servicos" className="py-16 md:py-24 bg-white">
+  <section id="servicos" className="py-12 md:py-16 lg:py-24 bg-white">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <motion.div
-        className="text-center mb-12"
+        className="text-center mb-8 md:mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-fliv-blue-secondary mb-4">Serviços Prestados</h2>
-        <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-fliv-blue-secondary mb-4">Serviços Prestados</h2>
+        <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
           Oferecemos uma gama completa de serviços para vidros automotivos. Confira o que podemos fazer por você:
         </p>
       </motion.div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
         {services.map((service, index) => (
           <motion.div
             key={service.name}
@@ -60,10 +60,12 @@ const ServicesSection = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: index * 0.1 }}
           >
-            <Card className="text-center hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-              <CardHeader className="items-center">
-                {service.icon}
-                <CardTitle className="text-fliv-blue-secondary mt-4">{service.name}</CardTitle>
+            <Card className="text-center hover:shadow-xl transition-shadow duration-300 h-full flex flex-col p-4 md:p-6">
+              <CardHeader className="items-center pb-2 md:pb-4 space-y-2 md:space-y-4">
+                <div className="mb-2">
+                  {service.icon}
+                </div>
+                <CardTitle className="text-fliv-blue-secondary text-base md:text-lg leading-tight">{service.name}</CardTitle>
               </CardHeader>
             </Card>
           </motion.div>
@@ -74,4 +76,3 @@ const ServicesSection = () => (
 );
 
 export default ServicesSection;
-  
