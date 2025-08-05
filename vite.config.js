@@ -1,3 +1,4 @@
+
 import path from 'node:path';
 import react from '@vitejs/plugin-react';
 import { createLogger, defineConfig } from 'vite';
@@ -71,15 +72,23 @@ logger.error = (msg, options) => {
 	loggerError(msg, options);
 }
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
 	customLogger: logger,
-	plugins: [react(), addTransformIndexHtml],
+	plugins: [
+		react(),
+		addTransformIndexHtml,
+	],
 	server: {
+		host: "::",
+		port: 8080,
 		cors: true,
 		headers: {
 			'Cross-Origin-Embedder-Policy': 'credentialless',
 		},
 		allowedHosts: true,
+	},
+	define: {
+		__WS_TOKEN__: JSON.stringify(process.env.WS_TOKEN || ''),
 	},
 	resolve: {
 		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json', ],
@@ -87,4 +96,4 @@ export default defineConfig({
 			'@': path.resolve(__dirname, './src'),
 		},
 	},
-});
+}));
