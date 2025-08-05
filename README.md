@@ -1,73 +1,76 @@
-# Welcome to your Lovable project
+# FLIV Auto Vidros - Web App
 
-## Project info
+Aplicação web para a rede de lojas FLIV Auto Vidros, especializada em serviços de vidros automotivos. O sistema permite que clientes encontrem a unidade mais próxima, conheçam os serviços oferecidos, solicitem orçamentos via WhatsApp e conheçam a história e diferenciais da empresa.
 
-**URL**: https://lovable.dev/projects/4882b80d-92bb-4f67-9045-9d0d10f8b19a
+## Descrição
 
-## How can I edit this code?
+A FLIV Auto Vidros é uma empresa do grupo União Vidros Automotivos, com mais de 24 anos de experiência no mercado. O site apresenta as unidades da rede, diferenciais, depoimentos de clientes e facilita o contato para orçamento rápido e atendimento personalizado.
 
-There are several ways of editing your application.
+## Funcionalidades
 
-**Use Lovable**
+- **Página inicial** com apresentação da empresa, serviços, diferenciais e chamada para ação.
+- **Página de unidades**: cada loja tem uma página dedicada com informações, endereço, mapa, WhatsApp e detalhes dos serviços.
+- **Solicitação de orçamento** via botão fixo do WhatsApp.
+- **Depoimentos de clientes** e apresentação da equipe.
+- **Design responsivo** e moderno, com animações e navegação fluida.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4882b80d-92bb-4f67-9045-9d0d10f8b19a) and start prompting.
+## Tecnologias Utilizadas
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React 18**
+- **Vite** (build e dev server)
+- **React Router DOM** (roteamento)
+- **Tailwind CSS** (estilização)
+- **Framer Motion** (animações)
+- **Radix UI** (componentes de acessibilidade)
+- **Lucide React** (ícones)
+- **Outras libs**: clsx, class-variance-authority
 
-**Use your preferred IDE**
+## Estrutura do Projeto
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+  components/      # Componentes reutilizáveis (Header, Footer, Seções, etc)
+  pages/           # Páginas principais (HomePage, StorePage)
+  data/            # Dados das lojas
+  lib/             # Utilitários e helpers
+  index.css        # Estilos globais
+  App.jsx          # Componente principal e roteamento
+  main.jsx         # Ponto de entrada da aplicação
+public/
+  ...              # Assets públicos
 ```
 
-**Edit a file directly in GitHub**
+## Como rodar o projeto
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. **Clone o repositório**
+   ```bash
+   git clone <url-do-repo>
+   cd <nome-da-pasta>
+   ```
 
-**Use GitHub Codespaces**
+2. **Instale as dependências**
+   ```bash
+   npm install
+   ```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+3. **Rode o servidor de desenvolvimento**
+   ```bash
+   npm run dev
+   ```
 
-## What technologies are used for this project?
+4. **Acesse em** [http://localhost:5173](http://localhost:5173)
 
-This project is built with:
+## Scripts disponíveis
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- `npm run dev` — inicia o servidor de desenvolvimento
+- `npm run build` — gera a build de produção
+- `npm run preview` — faz preview da build
 
-## How can I deploy this project?
+## Personalização
 
-Simply open [Lovable](https://lovable.dev/projects/4882b80d-92bb-4f67-9045-9d0d10f8b19a) and click on Share -> Publish.
+- Para adicionar ou editar lojas, altere o arquivo `src/data/storeData.js`.
+- Para modificar textos institucionais, edite os componentes em `src/components/`.
 
-## Can I connect a custom domain to my Lovable project?
+## Licença
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Este projeto é privado e de uso exclusivo da FLIV Auto Vidros. 
